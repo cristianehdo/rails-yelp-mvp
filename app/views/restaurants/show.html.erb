@@ -1,2 +1,5 @@
 <h1><%= @restaurant.name %></h1>
-<p><%= @restaurant.address %> - phone number: <%= @restaurant.phone_number %></p>
+<p>Address: <%= @restaurant.address %> - phone number: <%= @restaurant.phone_number %></p>
+<p>Category: <%= @restaurant.category %></p>
+<hr>
+<p><%= link_to "All restaurants", restaurants_path %></p>
