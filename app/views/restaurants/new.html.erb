@@ -1,6 +1,6 @@
 <h1>Add a new restaurant</h1>
 
-<%= form_for(@restaurant) do |f|%>
+<%= simple_form_for(@restaurant) do |f|%>
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control' %>
@@ -14,8 +14,7 @@
     <%= f.text_field :phone_number, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :category %>
-    <%= f.select(:category, ["chinese", "italian", "japanese", "french", "belgian"], class: 'form-control')  %>
+    <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"], class: "form-control" %>
   </div>
   <%= f.submit class: "btn btn-primary" %>
   <% end %>
