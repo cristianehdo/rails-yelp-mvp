@@ -2,4 +2,16 @@
 <p>Address: <%= @restaurant.address %> - phone number: <%= @restaurant.phone_number %></p>
 <p>Category: <%= @restaurant.category %></p>
 <hr>
+<ul class="list-inline">
+  <li><%= link_to "Add a review", new_restaurant_review_path(@restaurant)  %></li>
+  <li><%= link_to "All restaurants", restaurants_path %></li>
+</ul>
+<hr>
+<h1>Reviews</h1>
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+  <li><%= review.content %> - Rating: <%= review.rating %></li>
+  <% end %>
+</ul>
+
 <p><%= link_to "All restaurants", restaurants_path %></p>
